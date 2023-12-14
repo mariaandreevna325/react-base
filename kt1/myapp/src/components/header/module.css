@@ -1,0 +1,35 @@
+.mainblock {
+
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainblock img {
+    height: 70px;
+    width: auto;
+}
+
+.mainblock nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.mainblock nav ul li {
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.mainblock button {
+    background-color: #F9B640;
+    color: #fff;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mainblock button:hover {
+    background-color: #7d3a06;
+}

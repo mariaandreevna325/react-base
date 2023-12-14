@@ -1,0 +1,25 @@
+.main-block4 {
+    background-color: #fff;
+    justify-content: space-between;
+    display: flex;
+}
+
+
+.text4 {
+    padding-right: 100px;
+    padding-top: 200px;
+    line-height: 50px;
+    font-size: 30px;
+    font-weight: 300;
+    flex-direction: column;
+}
+
+.italic-text {
+    font-style: italic;
+    font-weight: 200;
+}
+
+.container {
+    margin: 0 auto;
+    width: 800px;
+}

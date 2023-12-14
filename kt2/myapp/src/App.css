@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+
+.addcard {
+  background-color: #ddbadf;
+  color: rgb(0, 0, 0);
+  border: solid 1px rgb(44, 10, 88);
+  width: 150px;
+  height: 30px;
+  border-radius: 14px;
+}
+.addcard:hover {
+  background-color: #ddbadf;
+  transition: 0.7s;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin: 20px;
+}
+
+.addcarddiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+}

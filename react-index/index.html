@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Предварительные требования</title>
+  </head>
+
+  <body>
+    <script>
+      // Оператор Spread (использование - при работе с состоянием компонента, когда необходимо создать новое            состояние для компонента)
+
+      //   const button = {
+      //     width: 200,
+      //     text: 'Buy',
+      //   };
+
+      //   const redButton = {
+      //     ...button,
+      //     color: 'red',
+      //   };
+
+      //   console.table(redButton);
+
+      /* =====================
+  Концепция деструктуризации в JavaScript ES6 позволяет извлекать данные из объектов и массивов,
+  используя новый синтаксис.
+  Вместо того, чтобы получать доступ к каждому свойству объекта или элементу массива отдельно,
+  мы можем одновременно получить доступ к нескольким свойствам или элементам, используя деструктуризацию.
+    ==================================
+  Деструктуризация объектов
+  Пример 1: Деструктуризация объекта   
+*/
+
+      //   const person = {
+      //     firstName: 'Ivan',
+      //     lastName: 'Petrov',
+      //     age: 30,
+      //     email: 'IvanPetrov@example.com',
+      //   };
+
+      /*
+  Чтобы получить доступ к свойствам объекта, мы можем использовать следующий синтаксис:
+*/
+
+      //   const firstName = person.firstName;
+      //   const lastName = person.lastName;
+      //   const age = person.age;
+      //   const email = person.email;
+
+      /*
+  Это может быть неудобно, если у нас есть много свойств в объекте.
+  Вместо этого мы можем использовать деструктуризацию объекта:
+*/
+
+      //   const { firstName, lastName, age, email } = person;
+      //   console.log(lastName, age);
+
+      /*
+  Теперь мы можем использовать переменные firstName, lastName, age и email для доступа к свойствам объекта person.
+  Обратите внимание, что названия переменных соответствуют названиям свойств объекта.
+  */
+      // Еще пример
+
+      // const person = {
+      //           name: 'Ivan',
+      //           age: 30,
+      //           address: {
+      //             city: 'Moscow',
+      //             country: 'Russia',
+      //           },
+      //         };
+
+      //         // Деструктуризация объекта
+      //         const {
+      //           name,
+      //           age,
+      //           address: { city }, // вложенная деструктуризация
+      //         } = person;
+
+      //         console.log(name); // "Ivan"
+      //         console.log(age); // 30
+      //         console.log(city); // "Russia"
+
+      /*
+        Пример 2: Деструктуризация объекта в функции
+        Мы можем также использовать деструктуризацию объекта в функциях.
+        Например:
+     */
+
+      //   function printPerson({ firstName, lastName, age, email }) {
+      //     console.log(`${firstName} ${lastName} (${age}), ${email}`);
+      //   }
+
+      //   const person = {
+      //     firstName: 'Ivan',
+      //     lastName: 'Petrov',
+      //     age: 30,
+      //     email: 'IvanPetrov@example.com',
+      //   };
+
+      //   printPerson(person);
+
+      /*
+        Здесь мы передаем объект person в функцию printPerson,
+        используя деструктуризацию объекта в качестве параметра функции.
+
+        Еще пример:
+        */
+
+      //   const person = {
+      //     firstName: 'Ivan',
+      //     lastName: 'Petrov',
+      //     age: 30,
+      //     email: 'IvanPetrov@example.com',
+      //   };
+
+      //   const personInfo = ({ firstName, email }) => {
+      //     return console.log(
+      //       `Сотрудник ${firstName} просит отправить сообщение по адресу ${email}`
+      //     );
+      //   };
+
+      //   personInfo(person);
+
+      /*
+==================================================
+
+        Деструктуризация массивов (использование - useState)
+        Пример 3: Деструктуризация массива
+        Давайте рассмотрим простой пример массива:
+     */
+
+      //   const numbers = [1, 2, 3];
+
+      /*
+        Чтобы получить доступ к элементам массива, мы можем использовать следующий синтаксис:
+     */
+
+      // const first = numbers[0];
+      // const second = numbers[1];
+      // const third = numbers[2];
+
+      /*
+        Опять же, это может быть неудобно, если у нас есть много элементов в массиве.
+        Вместо этого мы можем использовать деструктуризацию массива:
+     */
+
+      //   const [first, second, third] = numbers;
+      //   console.log(second);
+
+      /*
+        Теперь мы можем использовать переменные first, second и third для доступа к элементам массива numbers.
+
+        Пример 4: Пропуск элементов массива
+        Мы можем также пропустить некоторые элементы массива, используя запятые.
+        Например:
+     */
+
+      // const numbers = [1, 2, 3, 4, 5];
+
+      // const [first, , third, , fifth] = numbers;
+
+      /*
+        Здесь мы пропустили второй и четвертый элементы массива, используя запятые.
+
+        Пример 5: Деструктуризация массива в функции
+        Мы также можем использовать деструктуризацию массива в функциях.
+        Например:
+     */
+
+      //   function printNumbers([first, second, third]) {
+      //     console.log(`First: ${first}, Second: ${second}, Third: ${third}`);
+      //   }
+
+      //   const numbers = [1, 2, 3];
+
+      //   printNumbers(numbers);
+
+      /*
+        Здесь мы передаем массив numbers в функцию printNumbers,
+        используя деструктуризацию массива в качестве параметра функции.
+
+        Пример 7: Оставшиеся элементы массива
+        Мы можем также использовать оператор "..." для получения оставшихся элементов массива.
+        Например:
+    */
+
+      //   const numbers = [1, 2, 3, 4, 5];
+
+      //   const [first, second, ...rest] = numbers;
+      //   console.log(rest);
+
+      /*
+        Здесь мы используем оператор "..." для получения всех оставшихся элементов массива после второго элемента.
+        Они сохраняются в переменной rest.          
+     */
+
+      // ===================================================
+      // тернарный оператор (использование - при авторизации)
+      // условие ? Выражение 1 : Выражение 2
+
+      // ====================================================
+      // метод массивов map
+      // const myArray = [1, 2, 3];
+      // console.log(myArray);
+
+      // const newArray = myArray.map((el) => el * 3);
+
+      // console.log(myArray); // оригинальный массив не изменился
+      // console.log(newArray);
+
+      // ====================================================
+      // Классы
+
+//       class Person {
+//         constructor(name, age) {
+//           this.name = name;
+//           this.age = age;
+//         }
+
+//         greet() {
+//           console.log(`Привет, меня зовут ${this.name}`);
+//         }
+
+//         greetAge() {
+//           console.log(`Привет, меня зовут ${this.name}. Мне ${this.age} лет`);
+//         }
+//       }
+
+
+
+//       class Employee extends Person { 
+//     constructor(name, age, company, department) { 
+//         super(name, age); 
+//         this.company = company; 
+//         this.department = department; 
+//     } 
+//     goingToWork() { 
+//         console.log(`Привет, меня зовут ${this.name}. Я иду на работу в ${this.company} в отдел ${this.department}`); 
+//     } 
+//     getSalary() { 
+//         console.log(`Привет, меня зовут ${this.name}. Я работаю в ${this.company} в отделе ${this.department} и получаю зарплату`); 
+//     } 
+// } 
+ 
+
+
+//       const personOne = new Person('Ivan', 30);
+//       personOne.greet();
+//       personOne.greetAge();
+
+//       class Student extends Person {    
+//         constructor(name, age, study) {
+//           super(name, age);
+//           this.study = study;
+//         }
+
+//         myStady() {
+//           console.log(
+//             `Привет, меня зовут ${this.name}. Мне ${this.age} лет. Я учусь в ${this.study}.`
+//           );
+//         }
+//       }
+
+//       const studentIvan = new Student('Ivan', 19, 'ДГТУ');
+//       studentIvan.myStady();
+
+//       studentIvan.greetAge();
+
+
+//       const employeeIvan = new Employee('Ivan', 30, 'Apple', 'IT'); 
+//     employeeIvan.goingToWork(); 
+//     employeeIvan.getSalary();
+
+
+
+
+      // самостоятельно: создать дочерний класс Employee, который наследует класс Person, расширяет его свойствами company и department и методами "goingToWork" и "getSalary"
+
+
+
+
+
+
+        // ====================================================
+      // Асинхронность
+
+    //   console.log('Start');
+
+    //   window.setTimeout(function () {
+    //     console.log('Inside timeout');
+    //   }, 5000);
+
+    //   console.log('End');
+
+    //   window.setTimeout(function () {
+    //     console.log('Inside timeout2');
+    //   }, 2000);
+
+    
+    //  //   ====================================================
+    //   Promise
+
+    //   let a = 7;
+    //   console.log(a);
+
+    //   let b = new Promise(function (resolve, reject) {
+    //     setTimeout(() => {
+    //       resolve((a = 99));
+    //     }, 2000);
+    //   });
+
+    //   b.then(function () {
+    //     console.log(a);
+    //   }).catch(console.error);
+
+//     // машинки
+
+//     const sleep = (ms) => {
+//       return new Promise((resolve) => {
+//         setTimeout(() => resolve(), ms);
+//       });
+//     };
+
+//     Promise.all([sleep(2000), sleep(5000)]).then(() => {
+//       console.log('All promises');
+//     });
+
+//     Promise.race([sleep(2000), sleep(5000)]).then(() => {
+//       console.log('Race promises');
+//     });
+
+//     class Car {
+//       constructor(mark, model, speed) {
+//         this.mark = mark;
+//         this.model = model;
+//         this.speed = speed;
+//         this.time = Math.floor(Math.random() * 10000) - this.speed;
+//       }
+//     }
+
+//     const result = [];
+
+//     const competitors = (car) => {
+//       return new Promise((resolve) => {
+//         setTimeout(() => {
+//           console.log(
+//             'Car',
+//             car.mark,
+//             car.model,
+//             'finished in',
+//             car.time,
+//             'ms'
+//           );
+//           result.length == 0 ? (car.isWinner = true) : (car.isWinner = false);
+//           result.push(car);
+//           resolve();
+//         }, car.time);
+//       });
+//     };
+
+//     let race = [
+//       competitors(new Car('ford', 'mustang', 400)),
+//       competitors(new Car('mazda', 'rx-7', 350)),
+//       competitors(new Car('mersedes', 'e63 amg', 400)),
+//     ];
+
+//     Promise.all(race).then(() => {
+//       console.table(result);
+//     });
+// // машинки
+
+
+// // async/await
+//   const delay = (ms) => {
+//     return new Promise((r) => setTimeout(() => r(), ms));
+//   };
+
+  const url = 'https://jsonplaceholder.typicode.com/todos';
+
+  // function fetchTodos(){
+  //   console.log('Fetch todo started ...');
+  //   return delay(2000)
+  //     .then(() => fetch(url))
+  //     .then((response) => response.json());
+  // }
+
+  // fetchTodos()
+  //   .then((data) => {
+  //     console.log('Data:', data);
+  //   })
+  //   .catch((e) => console.error(e));
+
+
+  //   async function fetchAsyncTodos(){
+  //     console.log('Fetch todo started..');
+  //     try{
+  //       await delay(2000);
+  //       const response = await fetch(url);
+  //       const data = await response.json();
+  //       console.log('Data ', data);
+  //       } catch (e){
+  //         console.error(e);
+
+  //       } finally {
+  //         console.log('finally');
+  //       }
+  //   }
+
+  //   fetchAsyncTodos();
+
+
+// Замыкание
+
+function outer(){
+  let x = 10;
+  function inner(){
+    console.log(x);
+  }
+  return inner;
+}
+
+let closureFn = outer();
+closureFn();
+
+function createCalcFn(n){
+  return function () {
+    console.log(100 * n);
+  };
+}
+
+
+
+
+
+const calc = createCalcFn(42);
+calc();
+
+
+function createIncrementor(n) {
+  return function (m) {
+    return n + m;
+  };
+}
+
+
+const addOne = createIncrementor(1);
+console.log(addOne(3));
+
+const addTen = createIncrementor(10);
+console.log(addTen(100));
+
+
+function urlGeneration(domain) {
+  return function (url) {
+    return `https://${url}.${domain}`;
+  };
+}
+
+const comUrl = urlGeneration('ru');
+console.log(comUrl('google'));
+console.log(comUrl('netflix'));
+console.log(comUrl('VK'));
+
+    </script>
+  </body>
+</html>

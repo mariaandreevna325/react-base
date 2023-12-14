@@ -1,0 +1,51 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ddbadf;
+  color: rgb(0, 0, 0);
+  border: solid 2px rgb(44, 10, 88);
+  border-radius: 14px;
+  padding: 20px;
+  gap: 2px;
+}
+
+.plusmin {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddbadf;
+  color: rgb(0, 0, 0);
+  border: solid 2px rgb(44, 10, 88);
+  border-radius: 14px;
+  padding: 6px;
+  font-size: 20px;
+}
+.plus:hover {
+  background-color: #ddbadf;
+  transition: 0.7s;
+}
+
+.min {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddbadf;
+  color: rgb(0, 0, 0);
+  border: solid 2px rgb(44, 10, 88);
+  border-radius: 14px;
+  padding: 6px;
+  font-size: 20px;
+}
+
+.min:hover {
+  background-color: #ddbadf;
+  transition: 0.7s;
+}

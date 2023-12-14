@@ -1,0 +1,15 @@
+.main-block3 {
+    background-color: aliceblue;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    min-height: 633px;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-block3 p {
+    font-style: italic;
+    font-size: 20px;
+
+}

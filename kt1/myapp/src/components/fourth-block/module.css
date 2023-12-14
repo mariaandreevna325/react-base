@@ -1,0 +1,31 @@
+.squares {
+    display: flex;
+    min-height: 480px;
+    justify-content: space-around;
+    color: white;
+    font-style: italic;
+    text-align: center;
+
+
+}
+
+
+
+.box1 {
+    background-color: #22356F;
+    width: 100%;
+    padding-top: 30px;
+
+}
+
+.box2 {
+    background-color: #0052C1;
+    width: 100%;
+    padding-top: 30px;
+}
+
+.box3 {
+    background-color: #76B58B;
+    width: 100%;
+    padding-top: 30px;
+}
